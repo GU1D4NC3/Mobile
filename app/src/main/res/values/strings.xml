@@ -13,6 +13,10 @@
     <string name="title_newsletter">뉴스레터</string>
     <string name="text_hows_day">오늘 하루는 어땠나요?</string>
 
+
+    <!-- MYPAGE -->
+    <string name="logout">로그아웃</string>
+
     <!-- SAMPLE -->
     <string name="sample">samplesamplesample</string>
     <string name="move">이동하기</string>
