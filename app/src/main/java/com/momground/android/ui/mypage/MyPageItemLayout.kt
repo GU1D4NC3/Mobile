@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.momground.android.R
 import com.momground.android.databinding.ItemButtonBinding
 
-class MyPageLayout : ConstraintLayout {
+class MyPageItemLayout : ConstraintLayout {
     lateinit var title : TextView
     lateinit var action : TextView
 
