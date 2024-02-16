@@ -1,4 +1,4 @@
-package com.momground.android.ui.home
+package com.momground.android.ui.map
 
 import android.annotation.SuppressLint
 import android.content.Context
