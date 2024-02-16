@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="200dp">
+
+        <TextView
+            style="@style/fontStyleBold"
+            android:id="@+id/title_mypage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_mypage"
+            android:textColor="@color/default_black"
+            android:textSize="20dp"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginTop="30dp"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:orientation="vertical"
+            android:id="@+id/layout0"
+            android:layout_marginBottom="160dp">
+
+            <com.momground.android.ui.mypage.MyPageLayout
+                android:id="@+id/register_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/profile"
+                app:action="@string/confirmation"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_light"/>
+
+            <com.momground.android.ui.mypage.MyPageLayout
+                android:id="@+id/register_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/setting_status"
+                app:action="@string/confirmation"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_light"/>
+
+            <com.momground.android.ui.mypage.MyPageLayout
+                android:id="@+id/license_insurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/setting_feedback"
+                app:action="@string/confirmation"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_light"/>
+
+            <com.momground.android.ui.mypage.MyPageLayout
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/logout"
+                app:action=" "/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

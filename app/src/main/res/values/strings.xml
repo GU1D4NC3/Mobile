@@ -15,6 +15,14 @@
 
 
     <!-- MYPAGE -->
+    <string name="login">로그인</string>
+    <string name="profile">프로필</string>
+    <string name="confirmation">확인하기</string>
+    <string name="setting_status">상태 설정</string>
+    <string name="setting_feedback">신고/피드백</string>
+    <string name="setting_ask">문의</string>
+    <string name="uses_hand">손 사용</string>
+
     <string name="logout">로그아웃</string>
 
     <!-- SAMPLE -->
