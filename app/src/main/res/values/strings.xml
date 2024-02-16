@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">맘생일지</string>
+
+    <!-- TAB MENU -->
+    <string name="title_home">Home</string>
+    <string name="title_health">건강</string>
+    <string name="title_map">지도</string>
+    <string name="title_calender">달력</string>
+    <string name="title_mypage">마이페이지</string>
+
+    <!-- TAB HOME -->
+    <string name="title_check_food">음식체크</string>
+    <string name="title_newsletter">뉴스레터</string>
+    <string name="text_hows_day">오늘 하루는 어땠나요?</string>
+
+    <!-- SAMPLE -->
+    <string name="sample">samplesamplesample</string>
+    <string name="move">이동하기</string>
+
+</resources>
