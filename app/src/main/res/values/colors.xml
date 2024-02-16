@@ -11,6 +11,10 @@
     <color name="orange">#FF701F</color>
     <color name="yellow">#F4B61B</color>
 
+    <color name="gray">#9494A0</color>
+    <color name="gray_light">#EEEEF2</color>
+
     <color name="default_black">#2E2D3D</color>
     <color name="transparent">#000000</color>
+    <color name="background">#AAAAAA</color>
 </resources>
