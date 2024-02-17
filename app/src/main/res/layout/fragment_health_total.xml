@@ -31,14 +31,48 @@
         app:polygonForegroundDrawable="@drawable/bg_radar"
         app:textColor="@color/cool_black"
         app:textSize="@dimen/default_text_small"
-        android:padding="52dp"/>
+        android:padding="30dp"
+        android:layout_marginTop="50dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_solution"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/chart_radar"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/bg_solution"
+        android:layout_marginLeft="@dimen/default_layout_margin"
+        android:layout_marginRight="@dimen/default_layout_margin"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="@dimen/default_layout_margin">
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/fontStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_solution"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/default_text_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/text_context"
+            style="@style/fontStyleNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_solution_context_temp"
+            android:textColor="@color/gray700"
+            android:textSize="@dimen/default_text_tiny"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title"
+            android:layout_marginTop="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

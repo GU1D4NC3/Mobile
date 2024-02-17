@@ -17,7 +17,18 @@
     <!-- TAB HEALTH -->
     <string name="title_health_total">종합</string>
     <string name="title_health_diet">식단 기록</string>
-    <string name="title_health_hospital">병원 기록</string>
+    <string name="title_health_hospital">병원 연계(TBD)</string>
+    <string name="text_solution">맘그라운드 솔루션</string>
+    <string name="text_solution_context_temp">이번 주는 단백질 섭취가 부족해요!\n달걀, 생선, 고기 등의 음식을 매끼 섭취해야합니다.</string>
+    <string name="not_ready">서비스를 준비하고 있어요</string>
+    <string name="photo_not_yet">아직 등록된 사진이 없어요!</string>
+    <string name="photo_not_yet_desc">건강 분석을 위해 사진을 등록해주세요!</string>
+    <string name="goto_photo">사진 등록하기</string>
+
+    <string name="title_today">오늘 음식 분석이에요!</string>
+    <string name="title_last">지난 음식 분석이에요!</string>
+    <string name="text_date">%02월 d%02d일 %s</string>
+    <string name="label_today">today</string>
 
     <!-- MYPAGE -->
     <string name="login">로그인</string>

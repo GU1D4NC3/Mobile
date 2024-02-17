@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -69,7 +68,7 @@ class HealthFragment : Fragment() {
             {
                 0-> "종합"
                 1-> "식단 기록"
-                2-> "병원 기록"
+                2-> "병원 연계(TBD)"
                 else -> "종합"
             }
             return title

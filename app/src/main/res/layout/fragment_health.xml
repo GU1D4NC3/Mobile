@@ -20,13 +20,19 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.tabs.TabLayout
+        style="@style/fontStyleBold"
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#ffffff"
+        app:tabBackground="@drawable/bg_indicator"
+        app:tabIndicatorColor="@color/orange"
+        app:tabIndicatorHeight="@dimen/indicator_height"
         app:layout_constraintTop_toBottomOf="@+id/title_health"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="@dimen/default_layout_margin"
+        android:layout_marginRight="@dimen/default_layout_margin"
         android:layout_marginTop="20dp"/>
 
     <androidx.viewpager.widget.ViewPager

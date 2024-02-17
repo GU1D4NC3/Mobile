@@ -11,10 +11,14 @@
 
     <!-- MOMGROUND COLOR -->
     <color name="orange">#FF701F</color>
+    <color name="sub_orange">#FFDBC6</color>
     <color name="yellow">#F4B61B</color>
 
     <color name="gray">#9494A0</color>
+    <color name="gray200">#D5D5D5</color>
+    <color name="gray700">#6B6B6B</color>
     <color name="gray_light">#EEEEF2</color>
+    <color name="back_white1">#F9F9F9</color>
 
 
     <!-- COMMON -->
