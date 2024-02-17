@@ -32,8 +32,8 @@ public class Radar6Chart extends View {
 
     // public static final float CHART_WIDTH_RATIO = 0.38f;
     // public static final float CHART_HEIGHT_RATIO = 0.565f;
-    public static final float CHART_WIDTH_RATIO = 0.45f;
-    public static final float CHART_HEIGHT_RATIO = 0.685f;
+    public static final float CHART_WIDTH_RATIO = 0.48f;
+    public static final float CHART_HEIGHT_RATIO = CHART_WIDTH_RATIO*1.4736f;
     public static final float DELTA_Y_RATIO = 0.24f;
     
     public static final List<String> defaultLabels = new ArrayList<String>() {{
@@ -209,6 +209,7 @@ public class Radar6Chart extends View {
             int save = canvas.save();
             
             canvas.clipPath(filledPath);
+            polygonForegroundDrawable.setAlpha(180);
             polygonForegroundDrawable.setBounds(pathBuilder.chartRect());
             polygonForegroundDrawable.draw(canvas);
             

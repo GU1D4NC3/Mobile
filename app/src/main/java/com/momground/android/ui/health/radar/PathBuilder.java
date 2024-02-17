@@ -96,10 +96,10 @@ public class PathBuilder {
         float cy = baseRect.centerY();
         
         return new PointF[]{
-            new PointF(cx, cy + topY(1.15f)),
+            new PointF(cx, cy + topY(1.17f)),
             new PointF(cx + rightX(1.2f), cy + topMiddle(1)),
             new PointF(cx + rightX(1.2f), cy + bottomMiddle(1)),
-            new PointF(cx, cy + bottomY(1.25f)),
+            new PointF(cx, cy + bottomY(1.27f)),
             new PointF(cx + leftX(1.2f), cy + bottomMiddle(1)),
             new PointF(cx + leftX(1.2f), cy + topMiddle(1))
         };

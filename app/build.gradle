@@ -57,7 +57,6 @@ dependencies {
 
     // Chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
-    implementation 'com.github.luizgrp:SectionedRecyclerViewAdapter:v3.2.0'
 
     //firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
