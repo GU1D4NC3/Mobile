@@ -12,6 +12,13 @@
     <string name="title_check_food">음식체크</string>
     <string name="title_newsletter">뉴스레터</string>
     <string name="text_hows_day">오늘 하루는 어땠나요?</string>
+    <string name="comment_diary">한줄 일기로 감정을 공유해 보세요</string>
+    <string name="comment_diet">오늘의 식단을 입력해 보세요</string>
+    <string name="text_goal">이번 주 목표</string>
+    <string name="text_eat">%d 섭취하기</string>
+    <string name="text_baby0">엄마 조금만 기다려주세요\n곧 만나러 가요!</string>
+    <string name="rest_date">%02d주 %02d일 남았어요!</string>
+    <string name="text_measure_day">%02d주 %02d일 남았어요!</string>
 
 
     <!-- TAB HEALTH -->
