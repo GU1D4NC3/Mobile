@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "961810274417",
+    "project_id": "momground-v1",
+    "storage_bucket": "momground-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961810274417:android:e6974a8b29ae6c05e7a3d0",
+        "android_client_info": {
+          "package_name": "com.momground.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvEz02jzczbzZ6FgnQ_JfOgvCCMJEW7CE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
