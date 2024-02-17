@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -27,14 +26,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_white"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="@dimen/default_margin"
             android:layout_marginRight="@dimen/default_margin"
             android:orientation="vertical"
             android:id="@+id/layout0"
             android:layout_marginBottom="160dp">
 
-            <com.momground.android.ui.mypage.MyPageLayout
+            <com.momground.android.ui.mypage.MyPageItemLayout
                 android:id="@+id/register_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,22 +42,22 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/line_stroke"
                 android:background="@color/gray_light"/>
 
-            <com.momground.android.ui.mypage.MyPageLayout
+            <com.momground.android.ui.mypage.MyPageItemLayout
                 android:id="@+id/register_license"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="@string/setting_status"
-                app:action="@string/confirmation"/>
+                app:action="@string/level_normal"/>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/line_stroke"
                 android:background="@color/gray_light"/>
 
-            <com.momground.android.ui.mypage.MyPageLayout
+            <com.momground.android.ui.mypage.MyPageItemLayout
                 android:id="@+id/license_insurance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,15 +66,18 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/line_stroke"
                 android:background="@color/gray_light"/>
 
-            <com.momground.android.ui.mypage.MyPageLayout
+            <TextView
                 android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:title="@string/logout"
-                app:action=" "/>
+                android:text="@string/logout"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/default_text_small"
+                android:paddingTop="@dimen/default_button_marin"
+                android:paddingBottom="@dimen/default_button_marin"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 

@@ -2,7 +2,7 @@
     <string name="app_name">맘생일지</string>
 
     <!-- TAB MENU -->
-    <string name="title_home">Home</string>
+    <string name="title_home">홈</string>
     <string name="title_health">건강</string>
     <string name="title_map">지도</string>
     <string name="title_calender">달력</string>
@@ -22,6 +22,10 @@
     <string name="setting_feedback">신고/피드백</string>
     <string name="setting_ask">문의</string>
     <string name="uses_hand">손 사용</string>
+
+    <string name="level_easy">쉬움</string>
+    <string name="level_normal">보통</string>
+    <string name="level_high">높음</string>
 
     <string name="logout">로그아웃</string>
 
