@@ -1,7 +1,9 @@
 package com.momground.android.ui.map
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
@@ -9,18 +11,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.*
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.JointType
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.PolylineOptions
-import com.momground.android.R
-import com.momground.android.databinding.FragmentHomeBinding
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.momground.android.R
+import com.momground.android.databinding.FragmentMapBinding
 
 class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnClickListener {
     private lateinit var mMap: GoogleMap
@@ -30,7 +34,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentMapBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -41,7 +45,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         val mapViewModel =
             ViewModelProvider(this)[MapViewModel::class.java]
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentMapBinding.inflate(inflater, container, false)
         val root: View = binding.root
         locationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
@@ -49,7 +53,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         mapViewModel.text.observe(viewLifecycleOwner) {
             // textView.text = it
         }
-        val mapFragment = childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment?
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
@@ -61,8 +65,49 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         _binding = null
     }
 
+    //GoogleMap Setting
     override fun onMapReady(googleMap: GoogleMap) {
+        val seoul = LatLng(37.554891, 126.970814)
+
+        mMap.mapType = GoogleMap.MAP_TYPE_NORMAL // default 노말 생략 가능
+
         mMap = googleMap
+        if (ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            mMap.isMyLocationEnabled = true
+            // 현재 위치로 카메라 이동
+            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+                location?.let {
+                    val currentLatLng = LatLng(it.latitude, it.longitude)
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 19f))
+                }
+            }
+
+            locationListener = LocationListener { location ->
+                val userLocation = LatLng(location.latitude, location.longitude)
+                mMap.clear()
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 19f))
+            }
+            val locationRequest = LocationRequest.create()?.apply {
+                interval = 10000
+                fastestInterval = 5000
+                priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            }
+
+            val locationCallback = object : LocationCallback() {
+                override fun onLocationResult(locationResult: LocationResult) {
+                    locationResult ?: return
+                    for (location in locationResult.locations){
+                        updateLocationOnMap(location)
+                    }
+                }
+            }
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                fusedLocationClient.requestLocationUpdates(locationRequest!!, locationCallback, null)
+            }
+
+        } else {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        }
     }
 
     @SuppressLint("MissingPermission")

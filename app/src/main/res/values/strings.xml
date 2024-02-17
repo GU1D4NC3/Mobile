@@ -14,6 +14,11 @@
     <string name="text_hows_day">오늘 하루는 어땠나요?</string>
 
 
+    <!-- TAB HEALTH -->
+    <string name="title_health_total">종합</string>
+    <string name="title_health_diet">식단 기록</string>
+    <string name="title_health_hospital">병원 기록</string>
+
     <!-- MYPAGE -->
     <string name="login">로그인</string>
     <string name="profile">프로필</string>
