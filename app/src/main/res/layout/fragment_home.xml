@@ -12,24 +12,57 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        #한줄일기
+        <!-- COMMENT -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-        #아기
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        #헬스체크
+        <!-- BABY -->
 
-        #진통주기
+        <!-- HEALTH CHECK -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_health_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <!-- THROES -->
         <TextView
             style="@style/fontStyleBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"/>
+            android:text="@string/title_check_throes"
+            android:textSize="@dimen/default_text_small"
+            android:textColor="@color/default_black"
+            android:layout_marginLeft="@dimen/layout_margin_default"/>
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/graph_throes"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/img_graph"/>
+            android:layout_height="120dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_graph"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/layout_margin_default"
+            android:layout_marginRight="@dimen/layout_margin_default"/>
 
-        #뉴스레터
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/gray100"
+            android:layout_marginTop="@dimen/layout_margin_24"/>
+
+        <!-- NEWSLETTER -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_newsletter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/layout_margin_24"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.core.widget.NestedScrollView>

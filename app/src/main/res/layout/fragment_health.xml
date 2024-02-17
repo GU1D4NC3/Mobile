@@ -31,8 +31,8 @@
         app:layout_constraintTop_toBottomOf="@+id/title_health"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="@dimen/default_layout_margin"
-        android:layout_marginRight="@dimen/default_layout_margin"
+        android:layout_marginLeft="@dimen/layout_margin_default"
+        android:layout_marginRight="@dimen/layout_margin_default"
         android:layout_marginTop="20dp"/>
 
     <androidx.viewpager.widget.ViewPager

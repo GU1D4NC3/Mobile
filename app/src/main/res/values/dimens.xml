@@ -14,7 +14,8 @@
     <dimen name="default_round">8dp</dimen>
 
     <dimen name="default_inner_margin">16dp</dimen>
-    <dimen name="default_layout_margin">20dp</dimen>
+    <dimen name="layout_margin_default">20dp</dimen>
+    <dimen name="layout_margin_24">24dp</dimen>
     <dimen name="default_button_marin">20dp</dimen>
 
     <dimen name="default_button_height">40dp</dimen>

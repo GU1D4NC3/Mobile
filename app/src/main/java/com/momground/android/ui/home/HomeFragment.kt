@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.momground.android.databinding.FragmentHomeBinding
-import com.momground.android.ui.calendar.CalendarViewModel
 
 class HomeFragment : Fragment() {
 
@@ -20,7 +19,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val homeViewModel =
-            ViewModelProvider(this)[CalendarViewModel::class.java]
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root

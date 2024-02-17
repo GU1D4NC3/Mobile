@@ -42,13 +42,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:background="@drawable/bg_solution"
-        android:layout_marginLeft="@dimen/default_layout_margin"
-        android:layout_marginRight="@dimen/default_layout_margin"
+        android:layout_marginLeft="@dimen/layout_margin_default"
+        android:layout_marginRight="@dimen/layout_margin_default"
         android:paddingTop="24dp"
         android:paddingBottom="24dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_marginTop="@dimen/default_layout_margin">
+        android:layout_marginTop="@dimen/layout_margin_default">
 
         <TextView
             android:id="@+id/text_title"
