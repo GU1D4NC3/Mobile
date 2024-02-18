@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_home"
+        style="@style/fontStyleBold"
+        android:id="@+id/title_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_calender"
+        android:textColor="@color/default_black"
+        android:textSize="20dp"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/orange"
+        app:layout_constraintTop_toBottomOf="@+id/title_calendar"
+        android:layout_margin="@dimen/layout_margin_default"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginRight="@dimen/layout_margin_default"
+        android:layout_marginBottom="80dp"
+        app:tint="@color/white"
+        android:src="@drawable/ic_plus"
+        android:backgroundTint="@color/orange_less"
+        app:borderWidth="0dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
