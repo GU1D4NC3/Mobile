@@ -3,9 +3,10 @@
 
     <!-- TAB MENU -->
     <string name="title_home">홈</string>
-    <string name="title_health">건강</string>
+    <string name="title_health">분석</string>
     <string name="title_map">지도</string>
     <string name="title_calender">달력</string>
+    <string name="title_news">뉴스레터</string>
     <string name="title_mypage">마이페이지</string>
 
     <!-- TAB HOME -->

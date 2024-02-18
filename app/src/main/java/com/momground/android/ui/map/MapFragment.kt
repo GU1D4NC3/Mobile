@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -18,19 +19,20 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.model.JointType
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.PolylineOptions
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.*
 import com.momground.android.R
 import com.momground.android.databinding.FragmentMapBinding
 
+
 class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnClickListener {
+
+    lateinit var locationPermission: ActivityResultLauncher<Array<String>>
     private lateinit var mMap: GoogleMap
     private var pathPoints = mutableListOf<LatLng>()
-    private var totalDistance = 0f
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    lateinit var fusedLocationClient: FusedLocationProviderClient
+    lateinit var locationCallback: LocationCallback
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
 
@@ -53,9 +55,10 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         mapViewModel.text.observe(viewLifecycleOwner) {
             // textView.text = it
         }
-        val mapFragment = childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment?
-        mapFragment?.getMapAsync(this)
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
+        val mapFragment = childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment?
+        mapFragment?.getMapAsync(this)
 
         return root
     }
@@ -65,12 +68,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         _binding = null
     }
 
-    //GoogleMap Setting
     override fun onMapReady(googleMap: GoogleMap) {
-        val seoul = LatLng(37.554891, 126.970814)
-
-        mMap.mapType = GoogleMap.MAP_TYPE_NORMAL // default 노말 생략 가능
-
         mMap = googleMap
         if (ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.isMyLocationEnabled = true
@@ -115,23 +113,28 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         val location: Location? = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
         location?.let {
             val currentLatLng = LatLng(it.latitude, it.longitude)
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 19f))
         }
     }
 
     override fun onClick(view: View?) {
         when(view){
+            binding.buttonCurrent ->{
+                updateCurrentLocation()
+            }
         }
     }
 
     override fun onLocationChanged(location: Location) {
         val newLatLng = LatLng(location.latitude, location.longitude)
         pathPoints.add(newLatLng)
-        drawPath()
-        showTotalDistance()
+//        drawPath()
+//        showTotalDistance()
     }
 
     private fun updateLocationOnMap(location: Location) {
         val newLatLng = LatLng(location.latitude, location.longitude)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newLatLng, 19f))
     }
 
     private fun calculateDistance(from: LatLng, to: LatLng): Float {
@@ -140,19 +143,4 @@ class MapFragment : Fragment(), OnMapReadyCallback, LocationListener, View.OnCli
         return result[0]
     }
 
-    private fun drawPath() {
-        val polylineOptions = PolylineOptions()
-            .addAll(pathPoints)
-            .color(resources.getColor(R.color.orange))
-            .jointType(JointType.ROUND)
-            .width(7f)
-        mMap.addPolyline(polylineOptions)
-    }
-    private fun removePath(){
-        mMap.clear()
-    }
-    private fun showTotalDistance() {
-        val distanceInKm = totalDistance / 10000
-        // User.moveDistance = distanceInKm
-    }
 }

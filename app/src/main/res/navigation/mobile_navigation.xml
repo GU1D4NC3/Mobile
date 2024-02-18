@@ -12,16 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_map"
-        android:name="com.momground.android.ui.map.MapFragment"
-        android:label="@string/title_map"
-        tools:layout="@layout/fragment_map" />
-
-    <fragment
-        android:id="@+id/navigation_calender"
-        android:name="com.momground.android.ui.calendar.CalendarFragment"
-        android:label="@string/title_calender"
-        tools:layout="@layout/fragment_calendar" />
+        android:id="@+id/navigation_news"
+        android:name="com.momground.android.ui.news.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_health"
@@ -30,8 +24,15 @@
         tools:layout="@layout/fragment_health" />
 
     <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.momground.android.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
         android:id="@+id/navigation_mypage"
         android:name="com.momground.android.ui.mypage.MyPageFragment"
         android:label="@string/title_mypage"
         tools:layout="@layout/fragment_mypage" />
+
 </navigation>

@@ -1,13 +1,11 @@
 package com.momground.android
 
 import android.os.Bundle
-import android.view.Window
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.momground.android.common.BaseActivity
 import com.momground.android.databinding.ActivityMainBinding
 
@@ -27,7 +25,7 @@ class MainActivity : BaseActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_map, R.id.navigation_calender, R.id.navigation_health, R.id.navigation_mypage
+                R.id.navigation_home, R.id.navigation_news, R.id.title_health, R.id.navigation_map, R.id.navigation_mypage
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
