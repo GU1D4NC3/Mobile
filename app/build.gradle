@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.momground.android"
-        minSdk 30
+        minSdk 24
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -38,7 +38,6 @@ android {
 
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
@@ -47,24 +46,23 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // map
+    // Google-Map
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.gms:play-services-location:20.0.0'
 
     // Chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
 
-    //firebase
+    // Google-Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation("com.google.firebase:firebase-analytics")
 
-    //camera & qr
-    implementation "androidx.camera:camera-camera2:1.0.0-beta04"
-    implementation "androidx.camera:camera-view:1.0.0-alpha20"
-    implementation 'com.google.zxing:core:3.4.1'
+    // Calendar
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.1'
 
 }
