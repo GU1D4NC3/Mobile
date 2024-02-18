@@ -52,7 +52,7 @@ class HealthTotalFragment: BaseFragment(), View.OnClickListener {
 
         val labels: ArrayList<String> = arrayListOf()
         for (item in scoreList){
-            labels.add(item.nutrientDomain.areaText)
+            labels.add(item.nutrientDomain!!.areaText)
         }
 
         binding.chartRadar.setRatios(ratios)

@@ -1,36 +1,18 @@
-package com.momground.android.data;
+package com.momground.android.data
 
-import com.momground.android.enum_vo.NutrientDomain;
+import com.momground.android.enum_vo.NutrientDomain
 
-public class NutrientScore {
-
-    private NutrientDomain nutrientDomain;
+class NutrientScore {
+    var nutrientDomain: NutrientDomain? = null
 
     /**
      * normalized score base on 100
      */
-    private float score;
+    var score = 0f
 
-    public NutrientScore() {}
-
-    public NutrientScore(NutrientDomain nutrientDomain, float score) {
-        this.nutrientDomain = nutrientDomain;
-        this.score = score;
-    }
-    
-    public NutrientDomain getNutrientDomain() {
-        return nutrientDomain;
-    }
-    
-    public void setNutrientDomain(NutrientDomain nutrientDomain) {
-        this.nutrientDomain = nutrientDomain;
-    }
-    
-    public float getScore() {
-        return score;
-    }
-    
-    public void setScore(float score) {
-        this.score = score;
+    constructor() {}
+    constructor(nutrientDomain: NutrientDomain?, score: Float) {
+        this.nutrientDomain = nutrientDomain
+        this.score = score
     }
 }
