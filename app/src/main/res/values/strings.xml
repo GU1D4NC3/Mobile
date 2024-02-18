@@ -32,8 +32,8 @@
 
     <!-- TAB NEWS_LETTER -->
     <string name="desc_news">매일매일 새로운 소식을 확인해보세요</string>
-    <string name="theme_0">🥳 초보 임산부를 위한 튜토리얼</string>
-    <string name="theme_1">✨ Weekly Special 소식</string>
+    <string name="theme_0">✨ Weekly Special 소식</string>
+    <string name="theme_1">🥳 초보 임산부를 위한 튜토리얼</string>
     <string name="theme_2">🚑️ 건강/증상 관련 소식</string>
 
     <string name="category_all">전체</string>
