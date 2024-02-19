@@ -24,6 +24,7 @@
     <dimen name="layout_margin_16">16dp</dimen>
     <dimen name="layout_margin_24">24dp</dimen>
     <dimen name="layout_margin_28">28dp</dimen>
+    <dimen name="dimen_48">48dp</dimen>
 
     <!-- news letter -->
     <dimen name="layout_newsletter_width">250dp</dimen>

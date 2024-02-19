@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_orange"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/health_check"
+            android:layout_marginBottom="20dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:background="@drawable/corner_radius26"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="한줄 일기로 감정을 공유해 보세요"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/orange"
+                android:drawableRight="@drawable/check_image"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            android:background="@drawable/bg_white20"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:elevation="8dp">
+
+            <TextView
+                android:id="@+id/kcal_eat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="섭취한 칼로리"
+                android:textColor="#FFF5E8"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toTopOf="@id/number_eat"/>
+
+            <TextView
+                android:id="@+id/number_eat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 kcal"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/kcal_eat"
+                android:layout_marginTop="3dp"
+                app:layout_constraintBottom_toTopOf="@id/kcal_suggest"/>
+
+            <TextView
+                android:id="@+id/kcal_suggest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="권장 칼로리"
+                android:textColor="#FFF5E8"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number_eat"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toTopOf="@id/number_suggest"/>
+
+            <TextView
+                android:id="@+id/number_suggest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 kcal"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/kcal_suggest"
+                app:layout_constraintBottom_toTopOf="@id/text_walk"/>
+
+            <TextView
+                android:id="@+id/text_walk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="얼마나 움직였나요?"
+                android:textColor="#FFF5E8"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number_suggest"
+                android:layout_marginTop="21dp"
+                app:layout_constraintBottom_toTopOf="@id/number_walk" />
+
+            <TextView
+                android:id="@+id/number_walk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00 걸음"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/text_walk"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="21dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="200dp"
+                android:layout_marginRight="17dp">
+
+                <TextView
+                    android:id="@+id/text_momground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="맘그라운드"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/image_baby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_momground">
+                    
+                    <ProgressBar
+                        android:layout_width="200dp"
+                        android:layout_height="142dp"
+                        android:background="@drawable/image_circle"
+                        android:progressDrawable="@drawable/progress_bar"
+                        android:indeterminateOnly="false"
+                        android:max="100"
+                        android:progress="10"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/image_baby"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/image_baby"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="00 Days"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/health_check"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/health_check_background"
+            app:layout_constraintTop_toBottomOf="@id/card"
+            android:layout_marginTop="17dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/text_health_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="health check"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:textColor="#FF701F"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="월"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/text_health_check"
+                app:layout_constraintRight_toLeftOf="@id/health_check_button2"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="화"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/health_check_button1"
+                app:layout_constraintRight_toLeftOf="@id/health_check_button3"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button3"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="수"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/health_check_button2"
+                app:layout_constraintRight_toLeftOf="@id/health_check_button4"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button4"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="목"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/health_check_button3"
+                app:layout_constraintRight_toLeftOf="@id/health_check_button5"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button5"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="금"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/health_check_button4"
+                app:layout_constraintRight_toLeftOf="@id/health_check_button6"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button6"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="토"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/health_check_button5"
+                app:layout_constraintRight_toLeftOf="@id/health_check_button7"/>
+
+            <TextView
+                style="@style/fontStyleNormal"
+                android:id="@+id/health_check_button7"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/health_check_button"
+                android:text="일"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:textColor="#6B6B6B"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/health_check_button6"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="8dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
