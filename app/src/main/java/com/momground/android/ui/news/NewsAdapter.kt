@@ -1,11 +1,14 @@
 package com.momground.android.ui.news
 
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -14,7 +17,7 @@ import com.momground.android.R
 import com.momground.android.data.NewsItem
 
 
-class NewsAdapter(val context: Context, val items: List<NewsItem>):
+class NewsAdapter(val fm: FragmentManager, val context: Context, val items: List<NewsItem>):
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{
@@ -29,6 +32,7 @@ class NewsAdapter(val context: Context, val items: List<NewsItem>):
     override fun getItemCount(): Int = items.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val layout = view.findViewById<ConstraintLayout>(R.id.layout)
         val title = view.findViewById<TextView>(R.id.title)
         val category = view.findViewById<TextView>(R.id.category)
         val cover = view.findViewById<ImageView>(R.id.cover)
@@ -45,6 +49,18 @@ class NewsAdapter(val context: Context, val items: List<NewsItem>):
                 .fallback(R.drawable.img_cover_sample) //fallback은 아님
                 .into(cover)
 
+            //Open NewsLetter
+            layout.setOnClickListener {
+
+                val progressDialog: NewsDialog by lazy { NewsDialog(R.layout.dialog_news, item.title, item.category, item.content) }
+                if (!progressDialog.isAdded) {
+                    progressDialog.show(fm, null)
+                }
+
+                if (progressDialog.isAdded) {
+                    progressDialog.dismiss()
+                }
+            }
         }
     }
 }

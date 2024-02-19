@@ -9,7 +9,8 @@
     android:background="@drawable/bg_white"
     android:padding="@dimen/layout_margin_16"
     android:layout_margin="10dp"
-    android:elevation="@dimen/indicator_height">
+    android:elevation="@dimen/indicator_height"
+    android:id="@+id/layout">
 
     <androidx.appcompat.widget.AppCompatTextView
         style="@style/fontStyleNormal"

@@ -42,6 +42,12 @@
     <string name="category_mid">중기</string>
     <string name="category_late">말기</string>
 
+    <!-- QUIZ -->
+    <string name="button_quiz">퀴즈 풀기</string>
+    <string name="error_answer_none">정답을 선택해주세요</string>
+    <string name="correct">정답입니다</string>
+    <string name="incorrect">아쉽지만 정답이 아니에요!</string>
+
 
     <!-- TAB HEALTH -->
     <string name="title_health_total">종합</string>

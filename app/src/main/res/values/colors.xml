@@ -19,12 +19,14 @@
     <color name="gray100">#E6E6E6</color>
     <color name="gray200">#D5D5D5</color>
     <color name="gray700">#6B6B6B</color>
+    <color name="gray800">#545454</color>
     <color name="gray_light">#EEEEF2</color>
     <color name="back_white1">#F9F9F9</color>
 
 
     <!-- COMMON -->
     <color name="default_black">#2E2D3D</color>
+    <color name="default_gray">#808080</color>
     <color name="transparent">#00000000</color>
     <color name="background">#AAAAAA</color>
 

@@ -40,15 +40,15 @@ class NewsFragment : Fragment() {
     }
 
     private fun setTheme0(){
-        adapter0 = NewsAdapter(requireContext(), mockData())
+        adapter0 = NewsAdapter(requireActivity().supportFragmentManager, requireContext(), mockData())
         setTheme(adapter0, binding.listNews0)
     }
     private fun setTheme1(){
-        adapter1 = NewsAdapter(requireContext(), mockData())
+        adapter1 = NewsAdapter(requireActivity().supportFragmentManager, requireContext(), mockData())
         setTheme(adapter1, binding.listNews1)
     }
     private fun setTheme2(){
-        adapter2 = NewsAdapter(requireContext(), mockData())
+        adapter2 = NewsAdapter(requireActivity().supportFragmentManager, requireContext(), mockData())
         setTheme(adapter2, binding.listNews2)
     }
     private fun setTheme(adapter: NewsAdapter, recyclerView: RecyclerView){
