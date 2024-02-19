@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.momground.android.common.BaseFragment
 import com.momground.android.data.NutrientScore
 import com.momground.android.databinding.FragmentHealthTotalBinding
-import com.momground.android.enum_vo.NutrientDomain
+import com.momground.android.data.enum_vo.NutrientDomain
 
 
 class HealthTotalFragment: BaseFragment(), View.OnClickListener {
