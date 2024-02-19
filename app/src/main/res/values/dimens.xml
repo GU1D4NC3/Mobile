@@ -7,6 +7,7 @@
     <dimen name="line_stroke">1dp</dimen>
     <dimen name="indicator_height">2dp</dimen>
 
+    <dimen name="default_text_headline1">24dp</dimen>
     <dimen name="default_text_normal">20dp</dimen>
     <dimen name="default_text_small">16dp</dimen>
     <dimen name="default_text_tiny">14dp</dimen>
@@ -21,6 +22,7 @@
     <dimen name="layout_margin_default">20dp</dimen>
     <dimen name="layout_margin_16">16dp</dimen>
     <dimen name="layout_margin_24">24dp</dimen>
+    <dimen name="layout_margin_28">28dp</dimen>
 
     <!-- news letter -->
     <dimen name="layout_newsletter_width">250dp</dimen>
