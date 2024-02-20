@@ -1,7 +1,6 @@
 package com.momground.android.ui.news
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,20 +9,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.momground.android.data.NewsItem
-import com.momground.android.data.NewsItem2
-import com.momground.android.data.Response
 import com.momground.android.databinding.FragmentNewsBinding
-import com.momground.android.network.NetworkRepository
-import com.momground.android.retrofit.RetrofitRepository
+import com.momground.android.network.MyClass
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import java.net.ConnectException
 
 class NewsFragment : Fragment() {
-    private val repository = NetworkRepository()
-    private val repository2 = RetrofitRepository()
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
@@ -54,11 +46,25 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        /*
             GlobalScope.launch(Dispatchers.IO) {
                 val newsItem = NetworkRepository().requestKtorIo3(1)
                 Log.d("NEWS", newsItem.toString())
             }
 
+         */
+
+        GlobalScope.launch(Dispatchers.IO) {
+            val cats = MyClass().getCatFromApi()
+            println(cats.joinToString(separator = "\n") { it.toString() })
+
+        }
+
+        GlobalScope.launch(Dispatchers.IO) {
+            val cats = MyClass().getNewsById(1)
+            println(cats.data.newsTitle)
+
+        }
          /*
 
         GlobalScope.launch(Dispatchers.IO) {
@@ -69,26 +75,6 @@ class NewsFragment : Fragment() {
 
 
     }
-
-    fun getNews(){
-
-
-        try{
-            val data: Call<Response<NewsItem2>> = repository2.getNewsById(1)
-
-
-
-            println(data.toString())
-
-        }catch (e: ConnectException){
-            e.printStackTrace()
-        }catch (e: Exception){
-            e.printStackTrace()
-        }
-    }
-
-
-
 
 
     private fun setTheme0(){
@@ -127,7 +113,6 @@ class NewsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        repository.closeClient()
     }
 
 
