@@ -9,7 +9,8 @@ package com.momground.android.network
  */
 object NetworkConfig {
     // dev variant는 스테이징으로 고정해놓도록 해요.
-    private const val BASE_URL = "https://test.accx.dev"
+    const val BASE_URL = "https://test.accx.dev"
+
     const val POSTS = "$BASE_URL/posts"
     const val NEWS = "$BASE_URL/news/id"
 }

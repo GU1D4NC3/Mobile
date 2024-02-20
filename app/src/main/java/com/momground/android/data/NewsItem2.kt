@@ -1,8 +1,6 @@
 package com.momground.android.data
 
-import kotlinx.serialization.Serializable
-
-@Serializable
+@kotlinx.serialization.Serializable
 data class NewsItem2(
     val id: Int,
     var newsImg: String,
@@ -17,4 +15,6 @@ data class NewsItem2(
     val createdAt: String?,
     val deletedAt: String?,
     val answer: String
-)
+): java.io.Serializable { // 객체 직렬화 : 인텐트로 객체를 넘기기 위해서 직렬화를 해줘야 함
+    constructor() : this(0,"","","","","","","","","","","","")
+}
