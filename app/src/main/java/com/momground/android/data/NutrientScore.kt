@@ -1,6 +1,6 @@
 package com.momground.android.data
 
-import com.momground.android.data.enum_vo.NutrientDomain
+import com.momground.android.enum_vo.NutrientDomain
 
 class NutrientScore {
     var nutrientDomain: NutrientDomain? = null

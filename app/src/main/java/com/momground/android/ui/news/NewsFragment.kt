@@ -1,6 +1,7 @@
 package com.momground.android.ui.news
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.momground.android.data.NewsItem
 import com.momground.android.databinding.FragmentNewsBinding
+import com.momground.android.network.NetworkRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class NewsFragment : Fragment() {
-
+    private val repository = NetworkRepository()
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
@@ -38,6 +43,19 @@ class NewsFragment : Fragment() {
 
         return root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+            GlobalScope.launch(Dispatchers.IO) {
+                val newsItem = NetworkRepository().requestNewsById2(1)
+                Log.d("NEWS", newsItem.toString())
+            }
+    }
+
+
+
+
 
     private fun setTheme0(){
         adapter0 = NewsAdapter(requireActivity().supportFragmentManager, requireContext(), mockData())
@@ -75,6 +93,7 @@ class NewsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        repository.closeClient()
     }
 
 

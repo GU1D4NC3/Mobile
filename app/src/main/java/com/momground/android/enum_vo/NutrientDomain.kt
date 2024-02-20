@@ -1,4 +1,4 @@
-package com.momground.android.data.enum_vo
+package com.momground.android.enum_vo
 
 import android.graphics.Color
 import java.io.Serializable

@@ -1,4 +1,4 @@
-package com.momground.android.data.enum_vo
+package com.momground.android.enum_vo
 
 import java.io.Serializable
 

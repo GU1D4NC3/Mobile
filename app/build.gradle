@@ -26,6 +26,12 @@ android {
     }
 
     buildscript {
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -36,6 +42,10 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+    packagingOptions {
+        pickFirst "META-INF/INDEX.LIST"
+        pickFirst "META-INF/io.netty.versions.properties"
     }
 }
 
@@ -51,15 +61,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
 
     // Network(ktor)
-    implementation "io.ktor:ktor-client-core:1.6.1"
-    implementation "io.ktor:ktor-client-cio:1.6.1"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1-native-mt'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-native-mt'
-
-    //implementation 'io.ktor:ktor-client-android:3.0.0' // 네트워크 요청을 다루는 Engine.
-    //implementation 'io.ktor:ktor-client-serialization:3.0.0' // JSON의 직렬화와 역직렬화를 다룬다, 멀티 플랫폼 프로젝트를 위해 주로 사용된다.
-    //implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:3.0.0' // Entitiy 직렬화를 위해 사용된다.
-    //implementation 'io.ktor:ktor-client-logging-jvm:3.0.0' // HTTP Request을 로깅하기 위해 사용된다.
+    implementation "io.ktor:ktor-client-android:1.6.6"
+    implementation "io.ktor:ktor-client-serialization-jvm:1.6.6"
+    implementation "io.ktor:ktor-server-netty:1.6.6"
+    implementation("ch.qos.logback:logback-classic:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation 'com.google.code.gson:gson:2.8.5'
 
     // Google-Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
