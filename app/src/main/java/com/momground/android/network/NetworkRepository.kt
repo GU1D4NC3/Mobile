@@ -10,8 +10,11 @@ import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import io.ktor.features.*
 import io.ktor.http.*
+import io.netty.handler.logging.LogLevel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
@@ -47,10 +50,34 @@ class NetworkRepository {
             }
         }
 
-    inline fun <reified T> decodeDataResponse(jsonString: String): Response<NewsItem2> {
-        return Json.decodeFromString<Response<NewsItem2>>(jsonString)
-    }
+    suspend fun requestKtorIo2(id: Int): Response<NewsItem2>? =
+        withContext(Dispatchers.IO) {
+            val url = NetworkConfig.NEWS+"?id=$id"
+            val response: HttpResponse = client.get(url)
+            val responseStatus = response.status
+            Log.d(TAG, "requestKtorIo: $responseStatus")
 
+            if (responseStatus == HttpStatusCode.OK) {
+                Json.decodeFromString<Response<NewsItem2>>(response.readText())
+
+            } else {
+                null
+            }
+        }
+
+    fun requestKtorIo3(id: Int): Response<NewsItem2>? = runBlocking {
+        val url = NetworkConfig.NEWS+"?id=$id"
+        val response:  Response<NewsItem2> = client.get(url)
+        val responseStatus = response.status
+        Log.d(TAG, "requestKtorIo: $responseStatus")
+
+        if (responseStatus == HttpStatusCode.OK) {
+            Json.decodeFromString<Response<NewsItem2>>(response.readText())
+
+        } else {
+            null
+        }
+    }
 
     fun closeClient() {
         client.close()

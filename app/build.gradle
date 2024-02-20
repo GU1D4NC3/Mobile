@@ -61,12 +61,24 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
 
     // Network(ktor)
+    def ktor_version = "1.6.6"
     implementation "io.ktor:ktor-client-android:1.6.6"
     implementation "io.ktor:ktor-client-serialization-jvm:1.6.6"
     implementation "io.ktor:ktor-server-netty:1.6.6"
-    implementation("ch.qos.logback:logback-classic:1.6.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
     implementation 'com.google.code.gson:gson:2.8.5'
+    // implementation ("io.ktor:ktor-client-serialization:$ktor_version") // JSON의 직렬화와 역직렬화를 다룬다, 멀티 플랫폼 프로젝트를 위해 주로 사용된다.
+    // implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:$ktor_version") // Entitiy 직렬화를 위해 사용된다.
+
+    // - - Retrofit2
+    def retrofit_version = "2.9.0"
+    def logging_version = "4.3.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$logging_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_version"
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
     // Google-Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
@@ -84,6 +96,7 @@ dependencies {
 
     // Image Loading
     implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.3.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
     // Test

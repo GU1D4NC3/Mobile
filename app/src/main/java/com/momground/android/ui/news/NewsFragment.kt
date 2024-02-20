@@ -10,14 +10,20 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.momground.android.data.NewsItem
+import com.momground.android.data.NewsItem2
+import com.momground.android.data.Response
 import com.momground.android.databinding.FragmentNewsBinding
 import com.momground.android.network.NetworkRepository
+import com.momground.android.retrofit.RetrofitRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import java.net.ConnectException
 
 class NewsFragment : Fragment() {
     private val repository = NetworkRepository()
+    private val repository2 = RetrofitRepository()
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
@@ -47,10 +53,38 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
             GlobalScope.launch(Dispatchers.IO) {
-                val newsItem = NetworkRepository().requestNewsById2(1)
+                val newsItem = NetworkRepository().requestKtorIo3(1)
                 Log.d("NEWS", newsItem.toString())
             }
+
+         /*
+
+        GlobalScope.launch(Dispatchers.IO) {
+            getNews()
+        }
+
+          */
+
+
+    }
+
+    fun getNews(){
+
+
+        try{
+            val data: Call<Response<NewsItem2>> = repository2.getNewsById(1)
+
+
+
+            println(data.toString())
+
+        }catch (e: ConnectException){
+            e.printStackTrace()
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
     }
 
 

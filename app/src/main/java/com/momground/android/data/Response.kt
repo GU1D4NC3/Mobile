@@ -1,6 +1,8 @@
 package com.momground.android.data
 
-@kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Response<T>(
     val status: String,
     val data: T
