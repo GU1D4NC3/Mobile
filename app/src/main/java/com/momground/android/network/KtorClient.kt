@@ -23,15 +23,6 @@ object KtorClient {
             serializer = KotlinxSerializer(json = json)
         }
 
-        // 로깅 설정
-        install(Logging){
-            logger = object : Logger{
-                override fun log(message: String) {
-                    Log.d("testt", "api log: $message")
-                }
-            }
-            level = LogLevel.ALL
-        }
         install(HttpTimeout){
             requestTimeoutMillis = 10000
             connectTimeoutMillis = 10000

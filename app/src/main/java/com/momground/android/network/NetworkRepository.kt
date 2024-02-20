@@ -27,21 +27,6 @@ class NetworkRepository {
         return dataResponse
     }
 
-    suspend fun requestNewsById2(id: Int): Response<NewsItem2>{
-        val url = NetworkConfig.NEWS+"?id=$id"
-        var response: Response<Any>
-
-        withContext(Dispatchers.IO) {
-            val response: Response<NewsItem2> = client.get(url)
-            val responseStatus = response.status
-
-            Log.d(TAG, "requestKtorIo: $responseStatus")
-
-        }
-
-        return response
-    }
-
     suspend fun requestKtorIo(id: Int): String =
         withContext(Dispatchers.IO) {
             val url = NetworkConfig.NEWS+"?id=$id"
