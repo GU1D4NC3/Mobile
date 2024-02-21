@@ -60,6 +60,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
+    implementation 'com.google.android.gms:play-services-auth:21.0.0'
 
     // Network(ktor)
     def ktor_version = "1.6.6"
