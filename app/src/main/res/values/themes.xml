@@ -34,6 +34,10 @@
         <item name="android:fontFamily">@font/spoqa_font</item>
     </style>
 
+    <style name="fontStyleOrange" parent="fontStyleBold">
+        <item name="textColor">@color/orange</item>
+    </style>
+
     <style name="Widget.CalendarView.Custom" parent="android:Widget.CalendarView">
         <item name="android:focusedMonthDateColor">@android:color/holo_blue_light</item>
         <item name="android:weekNumberColor">@android:color/holo_red_light</item>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">맘생일지</string>
+    <string name="app_name">키핏</string>
 
     <!-- TAB MENU -->
     <string name="title_home">홈</string>
@@ -29,6 +29,11 @@
     <string name="text_fri">금</string>
     <string name="text_sat">토</string>
     <string name="text_sun">일</string>
+    <string name="text_today_analysis">오늘의 영양분석</string>
+    <string name="text_today_analysis_desc">희재님의 데이터로 필요한 영양소를 분석해요!</string>
+    <string name="text_expert_solution">전문가의 솔루션</string>
+    <string name="text_expert_solution_example">지방 섭취가 유난히 낮아요. 달걀,구운 고등어, 구운 연어를 드시는 것을 추천드려요!</string>
+    <string name="text_newspaper">함께 보면 좋은 뉴스레터</string>
 
     <!-- TAB NEWS_LETTER -->
     <string name="desc_news">매일매일 새로운 소식을 확인해보세요</string>

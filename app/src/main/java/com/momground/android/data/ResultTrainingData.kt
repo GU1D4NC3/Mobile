@@ -1,7 +1,7 @@
 package com.momground.android.data
 
 import com.momground.android.common.ViewType
-import com.momground.android.enum_vo.LevelLabel
+import com.momground.android.data.enum_vo.LevelLabel
 import java.util.*
 
 class ResultTrainingData : ViewType {

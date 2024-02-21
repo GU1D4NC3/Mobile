@@ -20,6 +20,7 @@
     <dimen name="default_button_radius">24dp</dimen>
 
     <dimen name="layout_margin_default">20dp</dimen>
+    <dimen name="layout_margin_4">4dp</dimen>
     <dimen name="layout_margin_8">8dp</dimen>
     <dimen name="layout_margin_16">16dp</dimen>
     <dimen name="layout_margin_24">24dp</dimen>

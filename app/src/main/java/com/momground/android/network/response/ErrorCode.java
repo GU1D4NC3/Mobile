@@ -1,4 +1,4 @@
-package com.momground.android.response;
+package com.momground.android.network.response;
 
 import java.util.Locale;
 

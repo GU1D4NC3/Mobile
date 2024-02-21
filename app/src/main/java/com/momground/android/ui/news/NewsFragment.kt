@@ -57,7 +57,6 @@ class NewsFragment : Fragment() {
         GlobalScope.launch(Dispatchers.IO) {
             val cats = MyClass().getCatFromApi()
             println(cats.joinToString(separator = "\n") { it.toString() })
-
         }
 
         GlobalScope.launch(Dispatchers.IO) {
