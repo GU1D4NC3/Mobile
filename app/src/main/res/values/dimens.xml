@@ -31,6 +31,9 @@
     <dimen name="layout_newsletter_width">250dp</dimen>
     <dimen name="layout_newsletter_height">180dp</dimen>
 
+    <!-- history -->
+    <dimen name="diet_item_height">56dp</dimen>
+
 
 
 </resources>

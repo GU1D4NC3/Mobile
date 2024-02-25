@@ -12,7 +12,7 @@
     <!-- MOMGROUND COLOR -->
     <color name="orange">#FF701F</color>
     <color name="orange_less">#FE9300</color>
-    <color name="sub_orange">#FFDBC6</color>
+    <color name="orange_sub">#FFDBC6</color>
     <color name="yellow">#F4B61B</color>
     <color name="white20">#33FFFFFF</color>
     <color name="black20">#33000000</color>

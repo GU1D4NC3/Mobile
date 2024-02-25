@@ -92,8 +92,9 @@
     <string name="upload_desc">먹은 음식 사진을 업로드하면 맘그라운드가 분석해요!</string>
     <string name="upload_yet">업로드 된 사진이 없어요</string>
     <string name="text_image_photo">이미지 사진</string>
-    <string name="text_select_meal">식사 종류를 선택해 주세요</string>
+    <string name="text_select_meal">*식사 종류를 선택해 주세요</string>
     <string name="text_select_menu">메뉴를 적어 주세요</string>
+    <string name="free_option">선택사항</string>
     <string name="upload">등록하기</string>
     <string name="text_breakfast">아침</string>
     <string name="text_lunch">점심</string>
