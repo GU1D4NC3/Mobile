@@ -24,6 +24,8 @@ class QuizDialog(val fm: FragmentManager, private val layoutResId: Int): DialogF
         return dialogView
     }
 
+
+
     override fun onResume() {
         super.onResume()
 

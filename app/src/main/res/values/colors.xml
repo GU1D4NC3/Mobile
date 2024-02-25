@@ -15,6 +15,7 @@
     <color name="sub_orange">#FFDBC6</color>
     <color name="yellow">#F4B61B</color>
     <color name="white20">#33FFFFFF</color>
+    <color name="black20">#33000000</color>
 
     <color name="gray">#9494A0</color>
     <color name="gray100">#E6E6E6</color>
