@@ -7,6 +7,7 @@ object User {
     internal var uuid: String = ""
     internal var name: String = ""
     internal var age: Int = 0
+    internal var driving: Boolean = false
 
     fun clear(){
         isLogin = false

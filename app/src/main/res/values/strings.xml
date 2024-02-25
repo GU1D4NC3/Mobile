@@ -100,6 +100,10 @@
     <string name="text_lunch">점심</string>
     <string name="text_dinner">저녁</string>
 
+    <!-- MAP -->
+    <string name="phone_call"></string>
+    <string name="sample_number">010-2205-3705</string>
+
     <!-- MYPAGE -->
     <string name="login">로그인</string>
     <string name="profile">프로필</string>

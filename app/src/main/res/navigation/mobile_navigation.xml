@@ -25,9 +25,9 @@
 
     <fragment
         android:id="@+id/navigation_map"
-        android:name="com.momground.android.ui.map.MapFragment"
+        android:name="com.momground.android.ui.map.Map2Fragment"
         android:label="@string/title_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map2" />
 
     <fragment
         android:id="@+id/navigation_mypage"
