@@ -52,7 +52,7 @@ class NewsAdapter(val fm: FragmentManager, val context: Context, val items: List
             //Open NewsLetter
             layout.setOnClickListener {
 
-                val progressDialog: NewsDialog by lazy { NewsDialog(R.layout.dialog_news, item.title, item.category, item.content) }
+                val progressDialog: NewsDialog by lazy { NewsDialog(fm, R.layout.dialog_news, item.title, item.category, item.content) }
                 if (!progressDialog.isAdded) {
                     progressDialog.show(fm, null)
                 }
